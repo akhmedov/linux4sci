@@ -3,6 +3,27 @@
 #include <iostream> // cout endl
 #include <algorithm> // reverse sort
 #include <cstdlib> // atoi
+#include <cstring> // strlen
+
+size_t std_strlen (const char *str)
+{
+	std::cout << "Custom strlen() is called!" << std::endl;
+	const char *s;
+	for (s = str; *s; ++s);
+	return (s - str);
+}
+
+void student_reverse (std::string& text)
+{
+	int length = text.length(); // 1 char = 1 byte
+	int operations = length / 2;
+
+	for (int i = 0; i < operations; i++) {
+		char tmp = text[i];
+		text[i] = text[length-1-i];
+		text[length-1-i] = tmp;
+	}
+}
 
 void std_reverse (std::string& text)
 {
@@ -36,7 +57,7 @@ int std_atoi (const char* cstring)
 {
 	std::cout << "Custom std::atoi() is called!" << std::endl;
 	int integer = 0;
-	int str_length = strlen(cstring);
+	int str_length = std_strlen(cstring);
 	int exponent = 1;
 	for (int i = str_length; i > 0; i--) {
 		int number = cstring[i-1] - '0';

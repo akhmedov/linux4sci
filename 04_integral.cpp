@@ -15,7 +15,7 @@ double simpson (double from, double to, const std::function<double(double)> &fun
 {
 	if (from >= to) return 0;
 
-	double h = std::abs(to - from) / TERMS;
+	double h = (to - from) / TERMS;
 	double I = 0;
 
 	double a = from;
@@ -47,8 +47,8 @@ int main ()
 	
 	for (double a = 0; a < 5; a++) {
 		auto f = [a] (double x) { return std::cos(a*std::tan(x)); };
-		auto F = [a] () { return M_PI_2 * std::pow(M_E,-a); };
-		cout << setw(20) << a << setw(20) << simpson(x0,x1,f) << F() << endl;
+		auto F = M_PI_2 * std::pow(M_E,-a);
+		cout << setw(20) << a << setw(20) << simpson(x0,x1,f) << F << endl;
 	}
 
 	return 0;
