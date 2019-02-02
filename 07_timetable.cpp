@@ -1,3 +1,5 @@
+// http://codeforces.com/problemset/problem/946/D
+
 #include <iostream>
 #define MAX(a,b) (((a)>(b))?(a):(b))
 #define MAX_LESSONS 510

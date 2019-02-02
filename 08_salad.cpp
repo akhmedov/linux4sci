@@ -1,3 +1,5 @@
+// http://codeforces.com/problemset/problem/366/C
+
 #include <iostream>
 #define MAX(a,b) (((a)>(b))?(a):(b))
 #define BUFFER_SIZE 12
